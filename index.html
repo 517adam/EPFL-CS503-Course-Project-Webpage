@@ -342,7 +342,7 @@
               SK-Adapter++ adds a lightweight refinement loop between coarse text-and-skeleton generation and final image-and-skeleton generation. In the current evaluation, the refine pipeline achieves the best CLIP and PickScore among the tested pipelines, suggesting improved semantic alignment and visual preference quality. The project's main takeaway is to use 2D refinement as a conservative semantic correction step, not as a replacement for native 3D skeleton control.
             </p>
             <p>
-              The current limitations are clear: the refine pipeline still needs a confirmed DINO/KD rerun, skeleton Chamfer evaluation is unavailable for the refined outputs, and the end-to-end workflow requires stronger automation. Future work should add an LLM-based semantic verifier, complete skeleton alignment evaluation, and expand the benchmark beyond the current 50-sample refine aggregate.
+              The current limitations are clear: The end-to-end workflow requires stronger automation. Future work should add an LLM-based semantic verifier and expand the benchmark.
             </p>
           </div>
         </div>
