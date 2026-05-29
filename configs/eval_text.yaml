@@ -1,0 +1,15 @@
+model_config: configs/sk_adapter_text.yaml
+checkpoint: /mnt/vilab/scratch/yuachen/yuachen/hf_models/sk-adapter/sk-adapter-text.pt
+output_dir: vis/test_eval
+seed: 420
+
+pos_cfg: 9.0
+neg_cfg: 0.0
+steps: 50
+
+slat_pos_cfg: 6.0
+slat_neg_cfg: 0.0
+slat_steps: 50
+
+# No `samples` key on purpose: with --all the script iterates the whole
+# dataset.val_split (configs/splits/test.json) from configs/sk_adapter_text.yaml.

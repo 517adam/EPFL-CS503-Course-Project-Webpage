@@ -1,0 +1,19 @@
+model_config: configs/sk_adapter_image.yaml
+checkpoint: /mnt/vilab/scratch/yuachen/yuachen/hf_models/sk-adapter/sk-adapter-img.pt
+output_dir: vis/image_full_pipeline
+seed: 42
+
+pos_cfg: 3.0
+steps: 50
+
+slat_pos_cfg: 3.0
+slat_steps: 50
+
+samples:
+  # Either give id or skeleton+image for each sample
+  # Dataset sample. The id is resolved from dataset.val_split in model_config.
+  # - id: example_dataset_id
+
+  # Custom skeleton + custom image sample.
+  - skeleton: example_input\wolf_repose.json
+    image: vis/text_full_pipeline/sample_wolf_repose_idx0_s420_render_04.png

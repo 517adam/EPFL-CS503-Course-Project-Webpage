@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="SK-Adapter++ course project webpage">
+  <meta name="keywords" content="SK-Adapter++, skeleton-guided 3D generation, image-conditioned generation, CS-503">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SK-Adapter++: Enhancing Skeleton-Guided Native 3D Generation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar is-light project-navbar" role="navigation" aria-label="main navigation">
+  <div class="container is-max-desktop">
+    <div class="navbar-brand">
+      <a class="navbar-item project-mark" href="#top">SK-Adapter++</a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="page-nav">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="page-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#abstract">Abstract</a>
+        <a class="navbar-item" href="#method">Method</a>
+        <a class="navbar-item" href="#interactive-examples">Examples</a>
+        <a class="navbar-item" href="#experiments">Experiments</a>
+        <a class="navbar-item" href="#conclusion">Conclusion</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero project-hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <p class="project-kicker">CS-503 Course Project</p>
+            <h1 class="title is-1 publication-title">SK-Adapter++: Enhancing Skeleton-Guided Native 3D Generation via Modality Compatible SK-Adapter</h1>
+            <p class="subtitle is-4 project-subtitle">
+              A lightweight refinement loop that combines precise 3D skeleton control with the visual fidelity of image-conditioned native 3D generation.
+            </p>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Yuzhuo Ao (422007),</span>
+              <span class="author-block">Yuanzhong Chen (423015),</span>
+              <span class="author-block">Tingsen Liu (422014),</span>
+              <span class="author-block">Zitian Wang (423090)</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="./static/pdf/proposal.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Proposal</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./static/pdf/progress-report.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Progress Report</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <figure class="project-figure">
+          <img src="./static/images/pipeline.png" alt="SK-Adapter++ pipeline overview">
+          <figcaption>
+            SK-Adapter++ refines a coarse text-and-skeleton generation into an image condition, then regenerates the asset with the original skeleton.
+          </figcaption>
+        </figure>
+        <h2 class="subtitle has-text-centered project-tldr">
+          <b>TL;DR:</b> SK-Adapter++ uses 2D semantic refinement as a conservative correction step, improving prompt-specific visual detail while preserving skeleton compatibility.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered is-variable is-4">
+        <div class="column is-6">
+          <div class="video-compare-wrap">
+            <div class="video-compare-inner" id="vc0">
+              <video class="vc-base" src="./static/turntable_white_bgbase.mp4" autoplay loop muted playsinline></video>
+              <video class="vc-refined" src="./static/turntable_white_bg.mp4" autoplay loop muted playsinline></video>
+              <div class="vc-divider"></div>
+              <div class="vc-handle"><div class="handle-circle"><i class="fas fa-arrows-alt-h"></i></div></div>
+              <div class="vc-label vc-label-left">Baseline</div>
+              <div class="vc-label vc-label-right">Refined</div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-6">
+          <div class="video-compare-wrap">
+            <div class="video-compare-inner" id="vc1">
+              <video class="vc-base" src="./static/turntable_white_bg1base.mp4" autoplay loop muted playsinline></video>
+              <video class="vc-refined" src="./static/turntable_white_bg1.mp4" autoplay loop muted playsinline></video>
+              <div class="vc-divider"></div>
+              <div class="vc-handle"><div class="handle-circle"><i class="fas fa-arrows-alt-h"></i></div></div>
+              <div class="vc-label vc-label-left">Baseline</div>
+              <div class="vc-label vc-label-right">Refined</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="interactive-examples">
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Interactive Examples</h2>
+          <p class="subtitle is-6" style="margin-bottom: 1.5rem;">Drag to rotate. The skeleton joints and the generated mesh share a synchronized view.</p>
+        </div>
+      </div>
+      <div class="columns is-multiline">
+        <div class="column is-6">
+          <div class="example-pair is-placeholder"
+               data-base="./static/models/0b85f3ae50999721439e899b45fb82b648e28ab263aa05a36655e1379441b4d3/"
+               data-obj="0b85f3ae50999721439e899b45fb82b648e28ab263aa05a36655e1379441b4d3_geometry.obj"
+               data-mtl="material.mtl"
+               data-skeleton='[[-0.00005,-0.00005,-0.00005],[-0.00005,-0.00005,0.05893],[-0.05903,0.0544,0.06123],[0.06028,0.06097,-0.0545],[-0.06141,-0.06038,-0.06037],[-0.00005,-0.00005,-0.05274],[0.01904,-0.18426,-0.40398],[-0.4018,-0.33827,-0.33827],[-0.12132,-0.1331,0.15453],[0.18878,-0.12132,-0.1324],[0.15453,0.18702,0.01904],[0.23337,-0.15383,0.13365],[0.09617,0.02105,-0.00479],[0.1276,0.1276,-0.00877],[-0.09153,-0.00606,-0.08428],[-0.00877,-0.09162,-0.00606],[-0.08503,0.13365,0.06593]]'>
+            <div class="example-viewers">
+              <div class="viewer-wrap"><canvas class="viewer-canvas skeleton-canvas"></canvas><div class="viewer-label">Skeleton</div></div>
+              <div class="viewer-wrap"><canvas class="viewer-canvas mesh-canvas"></canvas><div class="viewer-label">Mesh</div></div>
+            </div>
+            <div class="example-caption"><span>Stylized Cartoon Cat</span><span class="asset-status">Loading…</span></div>
+          </div>
+        </div>
+        <div class="column is-6">
+          <div class="example-pair is-placeholder"
+               data-base="./static/models/0d1190fc08344e6cbd71f69d9a12d2ab/"
+               data-obj="0d1190fc08344e6cbd71f69d9a12d2ab_geometry.obj"
+               data-mtl="material.mtl"
+               data-skeleton='[[0.00114,0.0025,0.0028],[0.00235,0.00071,0.0005],[0.04548,0.14648,0.17275],[0.20406,0.18799,0.17742],[0.17036,0.1933,0.18684],[0.17733,0.20356,0.19645],[0.1872,0.21227,0.20647],[0.19735,0.21819,0.21139],[0.20308,-0.04344,-0.144],[-0.17716,-0.19185,-0.17542],[-0.16355,-0.15781,-0.18051],[-0.17276,-0.16082,-0.19035],[-0.18315,-0.16995,-0.19756],[-0.19104,-0.17713,-0.20589],[-0.19899,-0.18825,0.07445],[0.10771,0.07451,0.10969],[-0.07367,-0.07581,-0.06646],[-0.10793,0.04531,0.04421],[0.03598,0.02356,0.00628],[0.00095,0.00783,-0.0033],[0.01359,0.01661,0.01086],[0.01282,0.01643,0.01667],[0.02318,0.03226,0.02809],[0.03966,0.05236,0.03849],[0.0496,0.06249,0.04547],[0.05793,0.0698,0.01153],[0.01608,0.00498,-0.09647],[-0.11117,-0.11664,-0.12103],[-0.12875,-0.1332,-0.13132],[-0.11941,-0.12224,-0.11626],[-0.10886,-0.11038,-0.10133],[-0.09583,-0.09605,-0.09063],[0.04831,-0.08657,0.00426],[-0.04828,0.04256,-0.01647],[0.08002,-0.00939,0.04612],[0.10478,0.17276,0.25002],[0.33633,0.3489,0.32176],[0.28802,0.19171,-0.01646],[-0.0372,-0.05581,-0.07613],[-0.07327,-0.0937,-0.10975],[-0.07441,-0.09338,-0.10794],[-0.0732,-0.08977,-0.10053],[-0.05898,-0.07349,-0.08138],[0.3208,0.28432,0.19148],[0.00376,-0.00897,-0.02458],[-0.04493,-0.04308,-0.06273],[-0.0781,-0.05292,-0.07308],[-0.08634,-0.05614,-0.07448],[-0.08406,-0.04972,-0.06609],[-0.07725,0.01189,-0.18992],[-0.36204,-0.48773,0.01517],[-0.22236,-0.3941,-0.49364]]'>
+            <div class="example-viewers">
+              <div class="viewer-wrap"><canvas class="viewer-canvas skeleton-canvas"></canvas><div class="viewer-label">Skeleton</div></div>
+              <div class="viewer-wrap"><canvas class="viewer-canvas mesh-canvas"></canvas><div class="viewer-label">Mesh</div></div>
+            </div>
+            <div class="example-caption"><span>Armored Astronaut Suit</span><span class="asset-status">Loading…</span></div>
+          </div>
+        </div>
+        <div class="column is-6">
+          <div class="example-pair is-placeholder"
+               data-base="./static/models/53e2fef6b64847c8ac52cd0fbd477cd0/"
+               data-obj="53e2fef6b64847c8ac52cd0fbd477cd0_geometry.obj"
+               data-mtl="material.mtl"
+               data-skeleton='[[-0.00216,-0.00407,-0.00279],[0.01588,0.01967,-0.00279],[-0.11013,-0.12477,-0.12763],[-0.12222,-0.00279,0.10334],[0.14329,0.12858,0.13441],[-0.00407,0.00245,0.00245],[-0.00407,0.10937,0.11592],[0.1198,-0.00407,-0.11012],[-0.10938,-0.08859,0.03021],[-0.10133,0.08271,0.27492],[0.38172,0.08271,0.09653],[0.01351,0.0585,-0.01524],[0.08271,0.11641,0.10113],[0.20784,0.25652,-0.10133],[-0.15543,-0.15543,-0.10133],[-0.13369,-0.1549,-0.23168],[-0.10133,-0.11343,-0.17378],[-0.27843,0.18373,0.01844],[-0.05797,0.01418,0.04057],[-0.05797,-0.11284,-0.14738],[-0.24466,-0.32455,-0.05797],[-0.07712,-0.14175,-0.17839],[-0.29086,0.01844,0.0926],[0.0926,0.01844,-0.01261],[-0.18542,-0.28669,0.01844],[-0.01717,-0.14121,-0.24276]]'>
+            <div class="example-viewers">
+              <div class="viewer-wrap"><canvas class="viewer-canvas skeleton-canvas"></canvas><div class="viewer-label">Skeleton</div></div>
+              <div class="viewer-wrap"><canvas class="viewer-canvas mesh-canvas"></canvas><div class="viewer-label">Mesh</div></div>
+            </div>
+            <div class="example-caption"><span>Horned Dino Creature</span><span class="asset-status">Loading…</span></div>
+          </div>
+        </div>
+        <div class="column is-6">
+          <div class="example-pair is-placeholder"
+               data-base="./static/models/b9b57e882ed94d9a9804449ce539e82c/"
+               data-obj="b9b57e882ed94d9a9804449ce539e82c_geometry.obj"
+               data-mtl="material.mtl"
+               data-skeleton='[[0.11475,0.13967,0.13573],[-0.11475,-0.13575,-0.13573],[0,0.22261,0.29536],[0.31768,0.32399,-0.22261],[-0.29536,-0.31768,-0.32399],[0.04774,0.04564,0.0577],[0.04774,0.04109,0.0577],[0.04995,0.04607,0.05913],[0.04343,0.04077,0.04607],[0.05913,0.04343,0.04077],[-0.04944,-0.23496,-0.38463],[-0.04945,-0.23534,-0.38463],[0.30287,0.26598,0.13457],[0.06812,-0.0173,0.26598],[0.13457,0.06812,-0.0173]]'>
+            <div class="example-viewers">
+              <div class="viewer-wrap"><canvas class="viewer-canvas skeleton-canvas"></canvas><div class="viewer-label">Skeleton</div></div>
+              <div class="viewer-wrap"><canvas class="viewer-canvas mesh-canvas"></canvas><div class="viewer-label">Mesh</div></div>
+            </div>
+            <div class="example-caption"><span>Cartoon Robot Head</span><span class="asset-status">Loading…</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Recent skeleton-guided native 3D generation models such as SK-Adapter provide precise structural control by injecting 3D skeleton tokens into a frozen Trellis backbone. This makes text-and-skeleton generation structurally faithful, but the visual quality remains bounded by text-to-3D generation: textures can be blurry, prompt-specific details may be missing, and local geometry can be inconsistent. Image-conditioned 3D generation offers stronger visual fidelity, but it assumes the user already has a reference image aligned to the target skeleton.
+            </p>
+            <p>
+              We propose <b>SK-Adapter++</b>, a modality-compatible pipeline that bridges this quality-control tradeoff. Starting from only a text prompt and a skeleton, we generate a coarse skeleton-aligned 3D asset, render a canonical view, use a vision-language model and image editor to refine local semantic details, and feed the refined image plus the original skeleton into a newly trained image-conditioned SK-Adapter. Our experiments indicate that this refinement loop improves text-image alignment and preference-style visual quality while keeping the refinement constrained to the original pose, viewpoint, silhouette, and skeleton.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Problem</h2>
+          <div class="content has-text-justified">
+            <p>
+              Artists and 3D content creators need both controllability and fidelity. Text-to-3D methods can generate an object quickly, but text alone cannot reliably specify exact articulations such as bent limbs, unusual topologies, or pose-specific structural constraints. Image-to-3D methods usually produce sharper appearances, but they require a compatible reference image. In practical creative workflows, users often have a concept and a target skeleton, not a perfectly aligned image-skeleton pair.
+            </p>
+            <p>
+              The project studies whether a single skeleton-compatible canonical render can be edited into a stronger image-to-3D condition without breaking the structural constraints that made the original SK-Adapter generation useful.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="related-work">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Related Work</h2>
+          <div class="content has-text-justified">
+            <p>
+              Native 3D generative models such as Trellis use structured latent representations to generate assets from text or image prompts, but they do not directly expose precise skeletal control. In 2D generation, ControlNet and T2I-Adapter show that structural signals can guide layout, while SKDream projects 3D skeletons into 2D conditions for multi-view generation. SK-Adapter instead works in the native 3D domain by encoding joint positions and topology-aware skeleton tokens, then injecting them into Trellis through lightweight cross-attention adapters.
+            </p>
+            <p>
+              SK-Adapter++ builds on SK-Adapter by making the adapter modality compatible. Rather than replacing skeleton control with image conditioning, it uses image conditioning as a refinement interface: text and skeleton still define the object and structure, while the edited render supplies visual evidence for local appearance and semantic details.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="method">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Method</h2>
+          <figure class="project-figure">
+            <img src="./static/images/pipeline.png" alt="SK-Adapter++ method pipeline">
+            <figcaption>
+              The pipeline connects text-conditioned SK-Adapter, conservative 2D refinement, and image-conditioned SK-Adapter.
+            </figcaption>
+          </figure>
+
+          <div class="method-steps">
+            <div class="method-step">
+              <span class="step-index">1</span>
+              <h3 class="title is-5">Coarse 3D Generation</h3>
+              <p>Generate an initial 3D asset from the prompt and input skeleton using the original text-conditioned SK-Adapter.</p>
+            </div>
+            <div class="method-step">
+              <span class="step-index">2</span>
+              <h3 class="title is-5">Canonical Render Refinement</h3>
+              <p>Select a fixed render view, ask Qwen3-VL to produce a conservative edit plan, then apply Seedream to clarify details while preserving pose and viewpoint.</p>
+            </div>
+            <div class="method-step">
+              <span class="step-index">3</span>
+              <h3 class="title is-5">Image + Skeleton Regeneration</h3>
+              <p>Feed the refined image and original skeleton into an image-conditioned SK-Adapter trained on Objaverse-TMS with a frozen image-conditioned Trellis backbone.</p>
+            </div>
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              The image-conditioned adapter replaces text features with DINOv2 image features while retaining the skeleton encoder and cross-attention injection strategy. The Trellis backbone remains frozen, the GRPE-based skeleton encoder produces topology-aware skeleton tokens, and zero-initialized projections allow the adapter to begin training without disrupting the pretrained generative prior.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experiments">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Experiments</h2>
+          <div class="content has-text-justified">
+            <p>
+              We compare the text-conditioned SK-Adapter baseline with the proposed refine pipeline across six metrics: CLIP (mean and max view) for text-image alignment, PickScore (mean and max view) for preference-style visual quality, Anymate Chamfer distance for skeleton/rig alignment, and DINO-KID for visual distribution similarity.
+            </p>
+          </div>
+
+          <div class="table-container">
+            <table class="table is-fullwidth is-striped project-table">
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th>Trend</th>
+                  <th>Base</th>
+                  <th>Refined</th>
+                  <th>Delta</th>
+                  <th>Relative</th>
+                  <th>Conclusion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CLIP mean view</td>
+                  <td>&uarr;</td>
+                  <td>26.5887</td>
+                  <td>26.8979</td>
+                  <td>+0.3091</td>
+                  <td>+1.16%</td>
+                  <td><span class="tag is-success is-light">improved</span></td>
+                </tr>
+                <tr>
+                  <td>CLIP max view</td>
+                  <td>&uarr;</td>
+                  <td>28.6023</td>
+                  <td>29.0199</td>
+                  <td>+0.4176</td>
+                  <td>+1.46%</td>
+                  <td><span class="tag is-success is-light">improved</span></td>
+                </tr>
+                <tr>
+                  <td>PickScore mean view</td>
+                  <td>&uarr;</td>
+                  <td>20.9128</td>
+                  <td>20.9554</td>
+                  <td>+0.0425</td>
+                  <td>+0.20%</td>
+                  <td><span class="tag is-success is-light">improved</span></td>
+                </tr>
+                <tr>
+                  <td>PickScore max view</td>
+                  <td>&uarr;</td>
+                  <td>21.4689</td>
+                  <td>21.5596</td>
+                  <td>+0.0907</td>
+                  <td>+0.42%</td>
+                  <td><span class="tag is-success is-light">improved</span></td>
+                </tr>
+                <tr>
+                  <td>Anymate CD avg</td>
+                  <td>&darr;</td>
+                  <td>0.2354</td>
+                  <td>0.2146</td>
+                  <td>&minus;0.0208</td>
+                  <td>&minus;8.83%</td>
+                  <td><span class="tag is-success is-light">improved</span></td>
+                </tr>
+                <tr>
+                  <td>DINO-KID mean</td>
+                  <td>&darr;</td>
+                  <td>0.8924</td>
+                  <td>0.8898</td>
+                  <td>&minus;0.0026</td>
+                  <td>&minus;0.29%</td>
+                  <td><span class="tag is-success is-light">improved</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <figure class="project-figure">
+            <img src="./static/images/qualitative.png" alt="Qualitative comparison between image, text, and refine pipelines">
+            <figcaption>
+              Qualitative evidence shows the refinement is most helpful for local semantic details such as teeth, segmented joints, thruster edges, and material clarity.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact-section" id="discussion">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Analysis</h2>
+          <div class="content has-text-justified">
+            <p>
+              The main positive result is that conservative 2D refinement can improve prompt-specific appearance without serving as a replacement for skeleton control. The strongest gains appear in semantic and preference-style metrics, which matches the intended role of the refinement step: sharpen local details, clarify material and part cues, and make the image condition more useful for the final image-conditioned generation stage.
+            </p>
+            <p>
+              The failure cases are also informative. Topological confusion can occur when visually similar articulated classes share local structures, such as spider-like and scorpion-like leg layouts. Semantic orientation errors can also appear when a 2D editor swaps head and tail cues during refinement. These issues suggest that the refinement planner should include explicit semantic-part verification before the final generation step.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="conclusion">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Conclusion and Limitations</h2>
+          <div class="content has-text-justified">
+            <p>
+              SK-Adapter++ adds a lightweight refinement loop between coarse text-and-skeleton generation and final image-and-skeleton generation. In the current evaluation, the refine pipeline achieves the best CLIP and PickScore among the tested pipelines, suggesting improved semantic alignment and visual preference quality. The project's main takeaway is to use 2D refinement as a conservative semantic correction step, not as a replacement for native 3D skeleton control.
+            </p>
+            <p>
+              The current limitations are clear: the refine pipeline still needs a confirmed DINO/KD rerun, skeleton Chamfer evaluation is unavailable for the refined outputs, and the end-to-end workflow requires stronger automation. Future work should add an LLM-based semantic verifier, complete skeleton alignment evaluation, and expand the benchmark beyond the current 50-sample refine aggregate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact-section" id="contributions">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Individual Contributions</h2>
+          <div class="content">
+            <ul>
+              <li><b>Yuzhuo Ao:</b> trained and debugged the SK-Adapter model.</li>
+              <li><b>Yuanzhong Chen:</b> explored external LLM integration and image editing optimization.</li>
+              <li><b>Tingsen Liu:</b> prepared demonstration results and led workflow construction.</li>
+              <li><b>Zitian Wang:</b> set up the evaluation framework and benchmarking.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact-section" id="references">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">References</h2>
+          <div class="content references">
+            <p>[1] Xiang et al. Structured 3D Latents for Scalable and Versatile 3D Generation, 2025.</p>
+            <p>[2] Wang, Ao, Wu, and Tang. SK-Adapter: Skeleton-Based Structural Control for Native 3D Generation, 2026.</p>
+            <p>[3] Chen et al. Seedream 4.0: Toward Next-Generation Multimodal Image Generation, 2025.</p>
+            <p>[4] Oquab et al. DINOv2: Learning Robust Visual Features without Supervision, 2024.</p>
+            <p>[5] Xu, Yang, and Yang. SKDream: Controllable Multi-view and 3D Generation with Arbitrary Skeletons, CVPR 2025.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        This course project webpage follows the structure and visual style of the SK-Adapter GitHub Pages template.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Video comparison sliders
+  document.querySelectorAll('.video-compare-inner').forEach(function(vc) {
+    var refined = vc.querySelector('.vc-refined');
+    var divider = vc.querySelector('.vc-divider');
+    var handle  = vc.querySelector('.vc-handle');
+    var dragging = false;
+
+    function setPos(clientX) {
+      var rect = vc.getBoundingClientRect();
+      var pct  = Math.min(Math.max((clientX - rect.left) / rect.width, 0), 1);
+      var pctStr = (pct * 100).toFixed(2) + '%';
+      refined.style.clipPath = 'inset(0 0 0 ' + pctStr + ')';
+      divider.style.left = pctStr;
+      handle.style.left  = pctStr;
+    }
+
+    vc.addEventListener('mousedown', function(e) { dragging = true; setPos(e.clientX); e.preventDefault(); });
+    window.addEventListener('mousemove', function(e) { if (dragging) setPos(e.clientX); });
+    window.addEventListener('mouseup',   function()  { dragging = false; });
+    vc.addEventListener('touchstart', function(e) { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove', function(e) { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend',  function()  { dragging = false; });
+  });
+
+  document.querySelectorAll('.navbar-burger').forEach((burger) => {
+    burger.addEventListener('click', () => {
+      const target = document.getElementById(burger.dataset.target);
+      burger.classList.toggle('is-active');
+      target.classList.toggle('is-active');
+    });
+  });
+</script>
+
+<!-- Three.js for template-matching interactive 3D viewers. -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.137.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.137.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.137.0/examples/js/loaders/MTLLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.137.0/examples/js/loaders/OBJLoader.js"></script>
+<script>
+window.addEventListener('load', function() {
+  if (!window.THREE || !THREE.OBJLoader || !THREE.MTLLoader || !THREE.OrbitControls) {
+    document.querySelectorAll('.asset-status').forEach(function(status) {
+      status.textContent = 'Viewer Pending';
+    });
+    return;
+  }
+
+  function createViewer(canvas) {
+    var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0xf5f5f5, 1);
+    renderer.outputEncoding = THREE.sRGBEncoding;
+
+    var scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xf5f5f5);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.85));
+    scene.add(new THREE.HemisphereLight(0xffffff, 0xdde8e4, 1.0));
+
+    var dirs = [[1, 0, 0], [-1, 0, 0], [0, 1, 0], [0, -1, 0], [0, 0, 1], [0, 0, -1]];
+    dirs.forEach(function(dir) {
+      var light = new THREE.DirectionalLight(0xffffff, 0.35);
+      light.position.set(dir[0], dir[1], dir[2]);
+      scene.add(light);
+    });
+
+    var camera = new THREE.PerspectiveCamera(35, 1, 0.01, 100);
+    camera.position.set(0, 0, 3);
+
+    var controls = new THREE.OrbitControls(camera, canvas);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.1;
+    controls.enableZoom = true;
+    controls.enablePan = false;
+
+    return { renderer: renderer, scene: scene, camera: camera, controls: controls };
+  }
+
+  function fitCamera(camera, object, controls) {
+    var box = new THREE.Box3().setFromObject(object);
+    var center = box.getCenter(new THREE.Vector3());
+    var size = box.getSize(new THREE.Vector3());
+    var maxDim = Math.max(size.x, size.y, size.z) || 1;
+    var dist = maxDim / (2 * Math.tan(camera.fov * Math.PI / 360));
+    controls.target.copy(center);
+    camera.position.set(center.x, center.y, center.z + dist * 1.8);
+    camera.near = dist * 0.01;
+    camera.far = dist * 20;
+    camera.updateProjectionMatrix();
+    controls.update();
+  }
+
+  function resizeViewer(viewer) {
+    var canvas = viewer.renderer.domElement;
+    var rect = canvas.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    var pixelRatio = viewer.renderer.getPixelRatio();
+    var width = Math.round(rect.width * pixelRatio);
+    var height = Math.round(rect.height * pixelRatio);
+    if (canvas.width !== width || canvas.height !== height) {
+      viewer.renderer.setSize(rect.width, rect.height, false);
+      viewer.camera.aspect = rect.width / rect.height;
+      viewer.camera.updateProjectionMatrix();
+    }
+  }
+
+  function buildSkeleton(joints) {
+    var group = new THREE.Group();
+    if (!joints || !joints.length) return group;
+
+    var n = joints.length;
+    var vecs = joints.map(function(p) { return new THREE.Vector3(p[0], p[1], p[2]); });
+
+    var box = new THREE.Box3();
+    vecs.forEach(function(v) { box.expandByPoint(v); });
+    var size = box.getSize(new THREE.Vector3());
+    var maxDim = Math.max(size.x, size.y, size.z) || 1;
+    var radius = maxDim * 0.03;
+
+    // Prim's MST to infer bone edges
+    var inTree = new Array(n).fill(false);
+    var minCost = new Array(n).fill(Infinity);
+    var parent = new Array(n).fill(-1);
+    minCost[0] = 0;
+    var edges = [];
+    for (var step = 0; step < n; step++) {
+      var u = -1;
+      for (var i = 0; i < n; i++) {
+        if (!inTree[i] && (u === -1 || minCost[i] < minCost[u])) u = i;
+      }
+      inTree[u] = true;
+      if (parent[u] !== -1) edges.push([parent[u], u]);
+      for (var j = 0; j < n; j++) {
+        if (!inTree[j]) {
+          var d = vecs[u].distanceTo(vecs[j]);
+          if (d < minCost[j]) { minCost[j] = d; parent[j] = u; }
+        }
+      }
+    }
+
+    // Draw bone lines
+    var boneMaterial = new THREE.LineBasicMaterial({ color: 0xff3300, linewidth: 2 });
+    edges.forEach(function(e) {
+      var geo = new THREE.BufferGeometry().setFromPoints([vecs[e[0]], vecs[e[1]]]);
+      group.add(new THREE.Line(geo, boneMaterial));
+    });
+
+    // Draw joint spheres on top
+    var jointMaterial = new THREE.MeshBasicMaterial({ color: 0xff6600 });
+    var jointGeometry = new THREE.SphereGeometry(radius, 16, 16);
+    vecs.forEach(function(v) {
+      var joint = new THREE.Mesh(jointGeometry, jointMaterial);
+      joint.position.copy(v);
+      group.add(joint);
+    });
+    return group;
+  }
+
+  function loadMesh(pair, viewer, status) {
+    var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.setPath(pair.dataset.base);
+    mtlLoader.load(pair.dataset.mtl, function(materials) {
+      materials.preload();
+      var objLoader = new THREE.OBJLoader();
+      objLoader.setMaterials(materials);
+      objLoader.setPath(pair.dataset.base);
+      objLoader.load(pair.dataset.obj, function(object) {
+        pair.classList.remove('is-placeholder');
+        status.textContent = 'Interactive Mesh';
+        viewer.scene.add(object);
+        fitCamera(viewer.camera, object, viewer.controls);
+      }, undefined, function() {
+        status.textContent = 'Mesh Unavailable';
+      });
+    }, undefined, function() {
+      status.textContent = 'Mesh Unavailable';
+    });
+  }
+
+  document.querySelectorAll('.example-pair').forEach(function(pair) {
+    var status = pair.querySelector('.asset-status');
+    var skeletonViewer = createViewer(pair.querySelector('.skeleton-canvas'));
+    var meshViewer = createViewer(pair.querySelector('.mesh-canvas'));
+    var syncing = false;
+
+    function syncControls(source, target) {
+      source.controls.addEventListener('change', function() {
+        if (syncing) return;
+        syncing = true;
+        target.camera.position.copy(source.camera.position);
+        target.camera.quaternion.copy(source.camera.quaternion);
+        target.controls.target.copy(source.controls.target);
+        target.controls.update();
+        syncing = false;
+      });
+    }
+    syncControls(skeletonViewer, meshViewer);
+    syncControls(meshViewer, skeletonViewer);
+
+    var joints = [];
+    try { joints = JSON.parse(pair.dataset.skeleton || '[]'); } catch (e) { joints = []; }
+    var skeleton = buildSkeleton(joints);
+    skeletonViewer.scene.add(skeleton);
+    fitCamera(skeletonViewer.camera, skeleton, skeletonViewer.controls);
+
+    loadMesh(pair, meshViewer, status);
+
+    (function animate() {
+      requestAnimationFrame(animate);
+      skeletonViewer.controls.update();
+      meshViewer.controls.update();
+      resizeViewer(skeletonViewer);
+      resizeViewer(meshViewer);
+      skeletonViewer.renderer.render(skeletonViewer.scene, skeletonViewer.camera);
+      meshViewer.renderer.render(meshViewer.scene, meshViewer.camera);
+    })();
+  });
+});
+</script>
+</body>
+</html>

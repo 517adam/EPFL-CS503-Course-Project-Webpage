@@ -1,0 +1,65 @@
+7.2 Final Webpage Guidelines
+Your final report should be submitted as a project webpage hosted on GitHub Pages. You can use the
+provided template as a starting point: Project Webpage Template, find your own template suitable for
+your project or start from scratch entirely. We’ve provided some examples on the course website. The
+last commit to your repository must be no later than the deadline. As before, one submission per group
+is sufficient. We also ask you to submit your code with proper running instructions (e.g. a ReadMe file)
+in a zip file. The ReadMe file should be self-contained: specify the packages to install, their version
+numbers, commands on how to run your code to reproduce your results and the file hierarchy with a
+description of each file. Please make sure the code is understandable, e.g. through documentation. You
+will not be graded on your programming quality, but we need the code for verification and reproduction.
+The webpage should contain a comparable amount of material to a 5-page PDF report (excluding references), using a similar number of words. There is no limit on supplementary material such as additional
+figures, videos, or interactive demos, but make sure that the main material is provided in the core sections of the webpage.
+Please try to organize your webpage in the following suggested way for a better understanding.
+• Abstract: Provide a brief description of your problem, approach, and key results.
+• Introduction: Describe the problem you are solving, its significance (i.e. why are you solving it?),
+and how you solve it. You can organize this section similar to the introduction of your proposal
+report while being more concrete and specific.
+• Related Work: How is this problem currently solved (if solved)? Discuss the relevant works to your
+project and pose your approach against them. Indicate the differences and similarities between
+your project and these works as clearly as possible.
+• Method: Explain your approach for solving the problem. Justify the design choices you made and
+mention other alternatives, if any. Make sure to include figures, diagrams, pseudo-code, etc. to
+strengthen your case. It is important that your method is explained in an understandable way for
+a fair evaluation.
+• Experiments: Discuss your experimental setup in detail. Explain your baselines and justify why
+you picked them. Support your results with quantitative and qualitative evaluations comparing
+your method to these baselines (e.g. include tables for performance metrics and qualitative figures.). If relevant, perform ablation studies to provide further insight into the inner workings of
+your method.
+If your project did not work as expected; and you instead managed to systematically invalidate an
+apriori sensible hypothesis; that is also a perfectly meaningful contribution. If this is the case,
+provide a detailed and sensible analysis that identifies the main modes of failure of your original
+hypothesis, discusses their potential reasons, and distills what one can learn from them.
+The projects will not be regarded as successful only if they “work"; any project that extracts interesting insights or contributes a signal towards evaluating a meaningful hypothesis will also be regarded as successful. The main evaluation criteria will be the degree of creativity, motivation, and
+scientific rigor with which you managed your project (e.g., asking interesting and sensible questions, forming and validating hypotheses in a systematic way using the appropriate baselines),
+rather than the end score you obtained on some pre-defined benchmark.
+9
+• Conclusion and Limitations: Provide a brief summary of and takeaways from your project. Mention the limitations of your method and how they can be solved. Also mention possible future
+extensions or other use cases.
+• Individual contributions: If it is a group project, include an author contribution section explaining the role of each group member throughout the project. You can refer to this example author
+contribution statement to give you an idea.
+Additional suggestions:
+• Make sure you proofread your webpage (or ask an external person to do it, if possible).
+• Take advantage of the webpage format: embed videos, interactive visualizations, or demos directly
+where they strengthen your results.
+• Visuals (figures, tables, etc.) can be more effective at conveying information than writing. But do
+make sure that your visuals are helpful, e.g. include captions that describe and explain the take
+home message for your figures and tables, plots are understandable (e.g., with proper labels and
+readable font size for axes, etc).
+See some examples here (from CS-503 Spring 2023), here, here, here, and here for inspiration.
+Best project: After the presentations and submission of the reports and completion of grading, the best
+project will be announced. We will honor the best project members with (virtual) registration to their
+favorite AI/ML/CV/robotics conference of their choice (NeurIPS, CVPR, CoRL, etc.).
+Evaluation criteria: Our grading criteria will be based on the novelty of your project and the scientific
+contribution it brings, thoroughness of your experiments and the rigor of your consequent analysis, and
+the quality of your delivery and writing. The weights of these aspects will be adjusted based on what
+makes sense for each project and to help you – your project does not necessarily have to hit all the marks
+to get a full grade, as long as it does what makes sense. For example, an analysis oriented project may
+not have a “novel" component, but the analysis will be valuable. Again, if your project did not work as
+expected, provide a clear and compelling discussion about why this is the case and what one can learn
+from it. Furthermore, please make sure your presentation is well-paced and clearly delivered. A common
+issue with students’ presentations is that, to fit in the time limit, they resort to inferior solutions such as
+talking fast, going through the slides too quickly, etc. Not being able to understand the presentation
+has a significant negative impact. The right way to address the time limit is to distill what should and
+shouldn’t be said. Specifically, avoid talking too fast or showing the slide content for a duration less than
+it’d be needed to be understood by first time visitors

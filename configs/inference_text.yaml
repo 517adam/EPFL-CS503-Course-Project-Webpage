@@ -1,0 +1,25 @@
+model_config: configs/sk_adapter_text.yaml
+checkpoint: /mnt/vilab/scratch/yuachen/yuachen/hf_models/sk-adapter/sk-adapter-text.pt
+output_dir: vis/text_full_pipeline
+seed: 420
+
+pos_cfg: 9.0
+neg_cfg: 0.0
+steps: 50
+
+slat_pos_cfg: 6.0
+slat_neg_cfg: 0.0
+slat_steps: 50
+
+samples:
+  # Either give id or skeleton+prompts for each sample
+  # Dataset sample. The id is resolved from dataset.val_split in model_config.
+  #- id: example_dataset_id
+
+  #  prompt: "A stylized animal character."
+  #  negative_prompt: ""
+  # negative_prompt should always be provided (even if it is empty) to avoid errors in the pipeline.
+  # Custom skeleton sample. The prompt is required unless stored in the JSON.
+  - skeleton: example_input/wolf_repose.json
+    prompt: "A realistic wolf."
+    negative_prompt: ""

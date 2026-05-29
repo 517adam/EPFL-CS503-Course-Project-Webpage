@@ -1,0 +1,46 @@
+model:
+  name: "microsoft/TRELLIS-text-large"
+  vae_ckpt: "microsoft/TRELLIS-image-large/ckpts/ss_enc_conv3d_16l8_fp16"
+  clip_model: "openai/clip-vit-large-patch14"
+  encoder:
+    type: "topology"
+    num_layers: 2
+    nhead: 8
+    max_path_len: 5
+    dropout: 0.1
+    use_value_emb: true
+  layer_range: null
+
+dataset:
+  type: "tms"
+  data_dir:
+    - "dataset/data/test/standard_pt"
+    - "dataset/data/test/xl_pt"
+  train_split: "configs/splits/train.json"
+  val_split: "configs/splits/test.json"
+  max_joints: 64
+  num_workers: 4
+
+training:
+  batch_size: 2
+  grad_accu: 8
+  epochs: 200
+  lr: 1.0e-5
+  seed: 2000
+  p_uncond: 0.1
+  warmup_steps: 500
+  fp16_mode: "amp"
+  log_every_step: 10
+  sample_every_step: 250
+  save_every_n_epochs: 50
+  val_every_n_epochs: 20
+  ema_beta: 0.999
+  sample_vae: true
+  use_tensorboard: true
+  use_wandb: false
+  num_samples: 4
+  output_dir: "./outputs/sk_adapter_text"
+
+wandb:
+  project: "sk-adapter-text"
+  key: ""

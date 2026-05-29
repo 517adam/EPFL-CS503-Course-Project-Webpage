@@ -1,0 +1,552 @@
+model_config: configs/sk_adapter_image.yaml
+checkpoint: /mnt/vilab/scratch/yuachen/yuachen/hf_models/sk-adapter/sk-adapter-img.pt
+output_dir: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage3
+seed: 42
+pos_cfg: 3.0
+steps: 50
+slat_pos_cfg: 3.0
+slat_steps: 50
+samples:
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/b535480bb43261ee6f55be9cf508582d84e0824747cf2e2caf4ab2115012696b.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/b535480bb43261ee6f55be9cf508582d84e0824747cf2e2caf4ab2115012696b/refined_render_04.png
+  prompt: A stylized, abstract representation of a fish, characterized by smooth curves
+    and pronounced fins, in a vibrant magenta color.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/cc4ab41731cc4c94a6adf2983821d1a8.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/cc4ab41731cc4c94a6adf2983821d1a8/refined_render_04.png
+  prompt: A compact, futuristic robotic vehicle or drone with a white and red color
+    scheme, equipped with a pair of cylindrical engines or thrusters, mechanical arms
+    or legs, and antennae, featuring a sharp-toothed shark face design on one side.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/2a6faae643cd46abb6e804aed6a01250.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/2a6faae643cd46abb6e804aed6a01250/refined_render_04.png
+  prompt: A blue, mechanical, rabbit-like head with sharp teeth, exposed seams, and
+    worn, segmented ears.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/7b931187f9e451e290afa497f2e8e1e9a9d1811c72d05a80199e738ebf64ad4f.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/7b931187f9e451e290afa497f2e8e1e9a9d1811c72d05a80199e738ebf64ad4f/refined_render_04.png
+  prompt: Abstract creature resembling a deep-sea fish with a large head, sharp teeth,
+    and a menacing dorsal fin.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/5223e05e00f795fc9347f5016d92b386ecbdad96f3091617b52785260097bde8.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/5223e05e00f795fc9347f5016d92b386ecbdad96f3091617b52785260097bde8/refined_render_04.png
+  prompt: A detailed, streamlined fish with silvery scales, prominent fins, and a
+    forked tail.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/44f4d21cedb74ab0b74eb94c174e524d.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/44f4d21cedb74ab0b74eb94c174e524d/refined_render_04.png
+  prompt: A detailed brown-shelled snail with a smooth, beige body.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/30c3515738b3fad130152813f4df5c48848441c8c36aee28bbe24e2d5b0a53ce.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/30c3515738b3fad130152813f4df5c48848441c8c36aee28bbe24e2d5b0a53ce/refined_render_04.png
+  prompt: A pair of stylized, articulated arms with red sleeves, featuring detailed
+    hands and rolled cuffs.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/4b0787ee40859352b2e7398f07800dfda435ccfb2a259f032f81bf79694cf9d9.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/4b0787ee40859352b2e7398f07800dfda435ccfb2a259f032f81bf79694cf9d9/refined_render_04.png
+  prompt: A stylized pink pig with black hooves and ears, featuring a rounded body
+    and a slightly elevated head.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/2fabf5db754746b7b81ebfa0bbe99161.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/2fabf5db754746b7b81ebfa0bbe99161/refined_render_04.png
+  prompt: A blue and red fish with a long beak and tail.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/9fdb67439d3642088619b278ffa192e8.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/9fdb67439d3642088619b278ffa192e8/refined_render_04.png
+  prompt: Low Poly Green Tree
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/e0251bf1cce74a5cd5013dd8e9607cc90085e227b65e0a443c1e42fdbda65293.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/e0251bf1cce74a5cd5013dd8e9607cc90085e227b65e0a443c1e42fdbda65293/refined_render_04.png
+  prompt: A pair of articulated human arms and hands in a relaxed, slightly bent pose.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/dd73f55db89049319b6eb324c6f49f24.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/dd73f55db89049319b6eb324c6f49f24/refined_render_04.png
+  prompt: A low-poly robotic dinosaur with articulated legs, a long tail, and a spiked
+    head.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/e8fd32435632aa89bb7975a7bf569208783be7b3187067ecc2863671dbe32e5d.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/e8fd32435632aa89bb7975a7bf569208783be7b3187067ecc2863671dbe32e5d/refined_render_04.png
+  prompt: A black spiky shape with elongated triangular spikes and small curved legs
+    protruding from the bottom.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/b2f0681c1e2145bcb0289f03ed75ea37.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/b2f0681c1e2145bcb0289f03ed75ea37/refined_render_04.png
+  prompt: A stylized goldfish with a rounded body, bright orange and white scales,
+    and large, flowing black fins.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/16f42daa53e859899116fd3a615570d8e6ad54b152985467045d09bace5629b3.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/16f42daa53e859899116fd3a615570d8e6ad54b152985467045d09bace5629b3/refined_render_04.png
+  prompt: A stylized purple rubber glove hand in a gesturing pose.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/d6eb4d03a4884f6997baf523086dd147.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/d6eb4d03a4884f6997baf523086dd147/refined_render_04.png
+  prompt: A pterosaur, a prehistoric flying reptile, with a wingspan depicted in varying
+    positions, featuring long, narrow wings, a notable head crest, sharp beak, and
+    distinctive tail. The wings appear to have a skin-like membrane and display a
+    combination of gray, brown, and red tones.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/e991a1885449e8bd31c1e6c3f830e02fa2015db308c58087bdc73476115a9fb0.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/e991a1885449e8bd31c1e6c3f830e02fa2015db308c58087bdc73476115a9fb0/refined_render_04.png
+  prompt: A stylized pink fish with a streamlined body and prominent fins.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/e47bec6ca2be4969b948135d2b92ea63.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/e47bec6ca2be4969b948135d2b92ea63/refined_render_04.png
+  prompt: A low-poly gray elephant with tusks and large ears.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/31e839cf0ec2485c80d495767d4ca3d9.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/31e839cf0ec2485c80d495767d4ca3d9/refined_render_04.png
+  prompt: A gold unicorn with a white and golden mane.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/b7c076da66c44020a2f6d8117b6a118d.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/b7c076da66c44020a2f6d8117b6a118d/refined_render_04.png
+  prompt: Representation of a shark with a primarily dark gray body, white underbelly,
+    and distinctively shaped snout and fins.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/2ce6e525975344a58485e8d8e192844e.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/2ce6e525975344a58485e8d8e192844e/refined_render_04.png
+  prompt: A simplified, smooth orange fish with large, prominent eyes and fins.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/893b0ea085d542ea02e824ef6104f8b7b6765f2b25a3f38ddd3248e888c68bd4.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/893b0ea085d542ea02e824ef6104f8b7b6765f2b25a3f38ddd3248e888c68bd4/refined_render_04.png
+  prompt: A magenta saxophone with simplified features and a uniform color.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/29f58a95a312993232621828c8ff7f9fa0c6e902765a727c356e3c27a37acb12.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/29f58a95a312993232621828c8ff7f9fa0c6e902765a727c356e3c27a37acb12/refined_render_04.png
+  prompt: A chunky oval beetle with six jointed legs, a small head with short antennae,
+    and rounded elytra.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/8f6d598411c7458d957ef199cff5191d.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/8f6d598411c7458d957ef199cff5191d/refined_render_04.png
+  prompt: A vibrant orange mythical bird with fiery tail feathers, large wings, sharp
+    claws, and a fierce expression.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/22529d468ea74a3e0793283a45ecb3910f84142c41812f4836d73b0506b99505.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/22529d468ea74a3e0793283a45ecb3910f84142c41812f4836d73b0506b99505/refined_render_04.png
+  prompt: A stylized, anthropomorphic character resembling a hybrid between a gorilla
+    and a cat, depicted in a playful crawling position.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/5d30bb887c6122057de5fecd7467477ff516c3e03f4fef6d6e2e528b34a2176c.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/5d30bb887c6122057de5fecd7467477ff516c3e03f4fef6d6e2e528b34a2176c/refined_render_04.png
+  prompt: A stylized insect-like creature with segmented legs, a rounded body, and
+    multiple elongated, pointed protrusions extending from its back.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/fbbd95f7acd47333a624d23e5084b7926d5d5c386a3386e6e64d16a9e8a588eb.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/fbbd95f7acd47333a624d23e5084b7926d5d5c386a3386e6e64d16a9e8a588eb/refined_render_04.png
+  prompt: A stylized deer figurine with oversized ears and short antlers. The body
+    is rounded and features a circular tail. Its legs are short and slightly thick,
+    contributing to its cartoonish appearance. The overall color is a shade of gray,
+    emphasizing its geometric form without intricate details.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/d3b3ded242cf4abc95f2f734b5a9b3d6.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/d3b3ded242cf4abc95f2f734b5a9b3d6/refined_render_04.png
+  prompt: A red squid.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/9bcb2745478442089bfdbc65a5901ee4.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/9bcb2745478442089bfdbc65a5901ee4/refined_render_04.png
+  prompt: A colorful, intricately patterned Tyrannosaurus rex dinosaur with blue,
+    yellow, and white markings.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/ecd359ae971c4594845ef3fe71e5576a.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/ecd359ae971c4594845ef3fe71e5576a/refined_render_04.png
+  prompt: A standing dog with a short tail and cropped ears.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/322e7cff7bde8de44958fb4d69ca2bfe2990b60c05bea79003ee8a971719a117.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/322e7cff7bde8de44958fb4d69ca2bfe2990b60c05bea79003ee8a971719a117/refined_render_04.png
+  prompt: Stylized snake, dark green with a bright yellow underside, featuring a smooth
+    tapering body, a distinct head shape with a pointed snout, and a forked tongue
+    detail.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/bca7ea60f5c31cf08d6072af7feff3a43996f20d0532a62f980096e11d039845.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/bca7ea60f5c31cf08d6072af7feff3a43996f20d0532a62f980096e11d039845/refined_render_04.png
+  prompt: A vibrant green dinosaur characterized by a large spiked back adorned with
+    orange tips and a sturdy body.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/43a5001423ec4f81919d32dd0c289b82.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/43a5001423ec4f81919d32dd0c289b82/refined_render_04.png
+  prompt: A black glove.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/bfece1644c5644d5bb996fe90ab2db16.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/bfece1644c5644d5bb996fe90ab2db16/refined_render_04.png
+  prompt: A smiling cartoon shark with its mouth open.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/cd2fe4eb758f4291bd805cafc16d42d8.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/cd2fe4eb758f4291bd805cafc16d42d8/refined_render_04.png
+  prompt: A stylized angelfish with a flat, triangular body and distinctive black,
+    white, and yellow stripes.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/7e8cc1728cfd455cba6c27354304c851.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/7e8cc1728cfd455cba6c27354304c851/refined_render_04.png
+  prompt: A red, dragon-like creature with large ears, sharp white claws, and black
+    bands around its limbs and tail.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/a83e6be0775c4ed2ae7ee24fd53f49cd.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/a83e6be0775c4ed2ae7ee24fd53f49cd/refined_render_04.png
+  prompt: Orange Cat
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/c4e0458a8c1fec43b5a676324c914570007e6ee59039beb3e01ecf79204fa224.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/c4e0458a8c1fec43b5a676324c914570007e6ee59039beb3e01ecf79204fa224/refined_render_04.png
+  prompt: A stylized pink bird with a pronounced beak and layered feather-like details.
+    Its limbs are slender, giving it a playful, animated appearance.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/8ae5bf3ad3c56762d5b75a7153e7323c46c90963b61e4c3542a1a87c38a226e7.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/8ae5bf3ad3c56762d5b75a7153e7323c46c90963b61e4c3542a1a87c38a226e7/refined_render_04.png
+  prompt: A stylized, anthropomorphic creature resembling a wolf, characterized by
+    a prominent mane and energetic posture, depicted in vibrant pink.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/ae7eff698e33c73b408a4393557b6a1f4e188d3e5c4c822c7c8846177d715a52.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/ae7eff698e33c73b408a4393557b6a1f4e188d3e5c4c822c7c8846177d715a52/refined_render_04.png
+  prompt: A stylized robot character featuring a robust, armored torso, large mechanical
+    hands, and a backpack-like attachment with futuristic elements. The design incorporates
+    segmented limbs and a distinctive head, emphasizing a mix of playful and industrial
+    aesthetics.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/dc557fd8cf03a02350e1b4617e364accbc5c5369fd18911526a212609208c079.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/dc557fd8cf03a02350e1b4617e364accbc5c5369fd18911526a212609208c079/refined_render_04.png
+  prompt: A small palm tree with a brown trunk and five large green leaves.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/8dce0257d3c8ce6e8149e102c5489970c8d71d4b4c43abe49c67d334d01bfbb6.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/8dce0257d3c8ce6e8149e102c5489970c8d71d4b4c43abe49c67d334d01bfbb6/refined_render_04.png
+  prompt: A stylized representation of a gorilla, depicted in a vibrant purple hue,
+    showcasing a muscular build and characteristic posture.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/98e1148398936236c79384f61e3230e5c59617e5ecbd4a2d7efc9934e3ee50d7.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/98e1148398936236c79384f61e3230e5c59617e5ecbd4a2d7efc9934e3ee50d7/refined_render_04.png
+  prompt: A simplified person wearing a white t-shirt, dark shorts, and white sneakers
+    with orange ankle accents.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/9a1fa3a0ec05432ebc5906e7e29d118b.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/9a1fa3a0ec05432ebc5906e7e29d118b/refined_render_04.png
+  prompt: Spider-Man flying through the air.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/b1a75590ad68133f5dab614bbbe0bc975d2239fe9bf90edd70e5e948ba470c85.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/b1a75590ad68133f5dab614bbbe0bc975d2239fe9bf90edd70e5e948ba470c85/refined_render_04.png
+  prompt: A stylized, polygonal purple creature with exaggerated limbs and clawed
+    feet, resembling a cartoonish bird or monster.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/70f25fdd7dfd7a34e041bf13a35c2b474cb54913b6c2a6300ea2cdc3db2f6f5a.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/70f25fdd7dfd7a34e041bf13a35c2b474cb54913b6c2a6300ea2cdc3db2f6f5a/refined_render_04.png
+  prompt: A stylized green cat figurine with exaggerated features and a playful posture.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/197b4166cb1a6847deef556dd7538daad5a856ceabe588b26a9ad8b13635f3bb.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/197b4166cb1a6847deef556dd7538daad5a856ceabe588b26a9ad8b13635f3bb/refined_render_04.png
+  prompt: Stylized blue and black crab plush toy with prominent claws and red-tipped
+    antennae.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/aa0524945bfeb3460b5ab9d5980a825dcd626fa02773f5922ed3bb69894577e7.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/aa0524945bfeb3460b5ab9d5980a825dcd626fa02773f5922ed3bb69894577e7/refined_render_04.png
+  prompt: Monochrome fantasy character wearing armor, including shoulder pads and
+    a skirt-like lower protection, depicted in a dynamic, action-oriented stance.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/6f0bca917c06494df8e34e0bd470b39ac4b4ec75bfea94bf57c9079d6721d85e.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/6f0bca917c06494df8e34e0bd470b39ac4b4ec75bfea94bf57c9079d6721d85e/refined_render_04.png
+  prompt: A stylized purple demon-like creature with glowing green eyes, yellow horns
+    and spikes, oversized clawed arms, and a coiled segmented tail.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/3d44223096b74eeb8669987256c7319d8b908fa2b00d2bd888768e2ab8d31f35.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/3d44223096b74eeb8669987256c7319d8b908fa2b00d2bd888768e2ab8d31f35/refined_render_04.png
+  prompt: A stylized dragon with large wings, four legs, and a long tail.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/77df5795c6674e3a1cefd7d970626f7c4d7d28075ea8d3f0876655a985a94109.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/77df5795c6674e3a1cefd7d970626f7c4d7d28075ea8d3f0876655a985a94109/refined_render_04.png
+  prompt: A stylized female character wearing a fitted purple and silver bodysuit
+    with high-heeled boots, gloves, and a ponytail hairstyle.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/0f2b30b3e9bfed4fec436e71888003bd4fecbd6a51c6926e99a7aef0bc4e436f.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/0f2b30b3e9bfed4fec436e71888003bd4fecbd6a51c6926e99a7aef0bc4e436f/refined_render_04.png
+  prompt: A stylized banana with simplified animal legs and a tail, resembling a dog;
+    it has a yellow body, brown extremities, and minimalist features.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/58a9cb18ca4203afd08c6db07480f047da28b92441c38f718c071381fd40a23f.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/58a9cb18ca4203afd08c6db07480f047da28b92441c38f718c071381fd40a23f/refined_render_04.png
+  prompt: Abstract representation of a crab-like structure in vibrant magenta color.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/2ce4cd7eeb1f48608d737d8c4e2e4225.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/2ce4cd7eeb1f48608d737d8c4e2e4225/refined_render_04.png
+  prompt: A hooded assassin-like character wearing a white robe with leather straps,
+    arm guards, and a red sash, carrying a hidden blade and several throwing knives.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/bdf76efce601f356b94b1c1e93d08beac9872523a4eb23a8ac397f8195b0a18e.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/bdf76efce601f356b94b1c1e93d08beac9872523a4eb23a8ac397f8195b0a18e/refined_render_04.png
+  prompt: A vertical post displaying three stylized fish and a rectangular flag.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/52409565634d02001f20d22a59e4ede8dda2893fec8c32f0c5a34ca5178a4525.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/52409565634d02001f20d22a59e4ede8dda2893fec8c32f0c5a34ca5178a4525/refined_render_04.png
+  prompt: A stylized representation of a firearm held by abstract, brightly colored
+    hands.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/ca8b4b3168b6fe63f7beabdcdaaa63374b503146c22fc4e7080e8232dadb82d5.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/ca8b4b3168b6fe63f7beabdcdaaa63374b503146c22fc4e7080e8232dadb82d5/refined_render_04.png
+  prompt: A stylized, abstract raven with a predominantly black body and striking
+    purple accents on its wings and head.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/b9d375dcd665894ef15ecdf3dc429034f96a882afe515ede8a7851fec6a47208.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/b9d375dcd665894ef15ecdf3dc429034f96a882afe515ede8a7851fec6a47208/refined_render_04.png
+  prompt: A small, futuristic spaceship with a sleek, angular design and a slightly
+    illuminated front section.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/a436269353a965f17a3a0da5d02288ef2914776fc0dffde07000a996a2c8ff26.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/a436269353a965f17a3a0da5d02288ef2914776fc0dffde07000a996a2c8ff26/refined_render_04.png
+  prompt: The character is depicted running, dressed in a brown outfit with a blue
+    harness and light hair.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/82aff23e90d946fd96d10ad3a9a493fa.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/82aff23e90d946fd96d10ad3a9a493fa/refined_render_04.png
+  prompt: A person with arms outstretched.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/40e99b6b3d3e4c7799a2c90ec3b4888f.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/40e99b6b3d3e4c7799a2c90ec3b4888f/refined_render_04.png
+  prompt: A robot holding a gun.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/e0344759500f4d2fb7aa69970c2b25d3.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/e0344759500f4d2fb7aa69970c2b25d3/refined_render_04.png
+  prompt: A stylized bird with long legs, a rounded body, and an elongated tail.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/7057bfc88f275f29ffc32fa09a9c9aa75d95dbb99d2acf8723cb0fcbbe587f15.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/7057bfc88f275f29ffc32fa09a9c9aa75d95dbb99d2acf8723cb0fcbbe587f15/refined_render_04.png
+  prompt: Bright pink cartoon-style dragon figure with a round head, bat-like wings,
+    pointed tail, and simplified body shape.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/8bb593fde9f84713b7d92c28bb333d86.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/8bb593fde9f84713b7d92c28bb333d86/refined_render_04.png
+  prompt: A man, possibly a zombie, wearing a shirt and jeans.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/3ec177c970cb00be722d5d3de0705bf0179e1ddda460eca652d7c453303c993c.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/3ec177c970cb00be722d5d3de0705bf0179e1ddda460eca652d7c453303c993c/refined_render_04.png
+  prompt: A cartoon-style boy with brown hair, wearing a two-tone grey and maroon
+    sports shirt with the number "23," black shorts, and black shoes with white soles.
+    He appears to be in a playful, dynamic pose as if he's chasing or reaching for
+    something.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/d7b0ae21226454e5b1f46680b0c7d9e84d0f23b4fd92b8a6d450bb20e3c7500b.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/d7b0ae21226454e5b1f46680b0c7d9e84d0f23b4fd92b8a6d450bb20e3c7500b/refined_render_04.png
+  prompt: A whimsical cartoon bird character with dark brown feathers, vibrant pink
+    accents on its head and tail, dressed in a black harness. It features exaggerated
+    eyes and a quirky expression.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/b9b57e882ed94d9a9804449ce539e82c.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/b9b57e882ed94d9a9804449ce539e82c/refined_render_04.png
+  prompt: A toy robot head with red eyes, resembling a cartoon character.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/a5c175f6c208415cb704033afcf5cb4c.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/a5c175f6c208415cb704033afcf5cb4c/refined_render_04.png
+  prompt: A detailed mosquito featuring a segmented body with gray wings and a red
+    abdomen, long thin legs, and antennae.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/71830603608b4612c0d7578fc67e1ab055a82dfc622ef355395c0c129d0cfa88.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/71830603608b4612c0d7578fc67e1ab055a82dfc622ef355395c0c129d0cfa88/refined_render_04.png
+  prompt: A low-poly chicken with a white body, yellow feet, and a red comb.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/be8c1eab5bc74cf394ae99f29abf5199.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/be8c1eab5bc74cf394ae99f29abf5199/refined_render_04.png
+  prompt: Futuristic humanoid figure in a dynamic pose with an integrated suit and
+    helmet, featuring patterned surfaces and glowing accents.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/0b85f3ae50999721439e899b45fb82b648e28ab263aa05a36655e1379441b4d3.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/0b85f3ae50999721439e899b45fb82b648e28ab263aa05a36655e1379441b4d3/refined_render_04.png
+  prompt: A stylized, cartoonish representation of a cat, featuring a smooth pink
+    surface.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/21f400a12f7c4b2eb24158aeea46ad4e.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/21f400a12f7c4b2eb24158aeea46ad4e/refined_render_04.png
+  prompt: A sea turtle with detailed patterns on its shell and skin, showcasing variations
+    of brown, orange, and blue hues.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/f1fbc33234374c3a911148a453399186.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/f1fbc33234374c3a911148a453399186/refined_render_04.png
+  prompt: A male figure in a dynamic pose, wearing a grey t-shirt, blue jeans, and
+    brown boots. The figure has a muscular build, short hair, and the facial features
+    are not visible. The clothing appears to show realistic signs of wear, such as
+    dirt and creases.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/75636df3401240baade9e30bddfa403c.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/75636df3401240baade9e30bddfa403c/refined_render_04.png
+  prompt: A green caterpillar with pink eyes.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/d7555032a59f47e7bbf37259556717d0.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/d7555032a59f47e7bbf37259556717d0/refined_render_04.png
+  prompt: A humanoid figure in tactical gear with a camouflaged suit, gloves, boots,
+    and a helmet, equipped with a utility belt and pouches, posed as if ready for
+    combat.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/7c14a57ed915a99619311f6f4898f25b408e0918ccf2bf4dd0964b94f7f747e6.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/7c14a57ed915a99619311f6f4898f25b408e0918ccf2bf4dd0964b94f7f747e6/refined_render_04.png
+  prompt: A bright green cup with a tapered design, featuring smooth surfaces and
+    a minimalist aesthetic.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/cb7160b9eaf22dba14b1c1431dda8f525d2d2fce5822781b5887756bea21638a.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/cb7160b9eaf22dba14b1c1431dda8f525d2d2fce5822781b5887756bea21638a/refined_render_04.png
+  prompt: A stylized parrot figure with a green crested head, yellow beak, blue torso,
+    and green limbs.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/891517ee14a2fee035bb8136d61cb225cc07140685ba929fb240970ecfb80755.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/891517ee14a2fee035bb8136d61cb225cc07140685ba929fb240970ecfb80755/refined_render_04.png
+  prompt: A fantasy-themed female character wearing an ornate purple and gold armor
+    set with a horned helmet, skeletal and bone-like embellishments, and high-heeled
+    boots, featuring intricate patterns and a mystical, dark aesthetic.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/0d1190fc08344e6cbd71f69d9a12d2ab.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/0d1190fc08344e6cbd71f69d9a12d2ab/refined_render_04.png
+  prompt: A detailed white futuristic armored astronaut suit with various colored
+    markings and a visor, featuring articulated joints and reinforced sections.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/12fdd2dd74190bfd2cdd2dd698c93e72c66cb186221e1622a8fb9a0a27ff966d.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/12fdd2dd74190bfd2cdd2dd698c93e72c66cb186221e1622a8fb9a0a27ff966d/refined_render_04.png
+  prompt: A cartoonish young boy with blonde hair, wearing a blue and white striped
+    shirt, brown shorts, and purple shoes with white soles.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/23f86ae8133e00cf6cf24849ffa67cd2f13eb59135779ac27a7dbcbe72815daa.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/23f86ae8133e00cf6cf24849ffa67cd2f13eb59135779ac27a7dbcbe72815daa/refined_render_04.png
+  prompt: A humanoid figure with spiked armor, large boots, a ponytail, and one arm
+    raised.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/f61f1d4c87150365fd42b802b3d76101aa3c364ca36c760c8c63ae89c29f6be8.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/f61f1d4c87150365fd42b802b3d76101aa3c364ca36c760c8c63ae89c29f6be8/refined_render_04.png
+  prompt: A low-poly, abstract purple bear-like creature with rounded feet and clawed
+    hands.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/cb39a34f6dd02a178d89db4c90629a33e5dc67597dfaecd6d3b5b73917267968.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/cb39a34f6dd02a178d89db4c90629a33e5dc67597dfaecd6d3b5b73917267968/refined_render_04.png
+  prompt: A futuristic soldier wearing tan and brown camouflage armor, equipped with
+    various pouches and gear, and a helmet with red markings.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/e66fe8a121034a44ae6b9c2c0e30410e.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/e66fe8a121034a44ae6b9c2c0e30410e/refined_render_04.png
+  prompt: A wooden recurve bow with gray accents and a central grip.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/25ac94b7192d401f8ce7b7c072877502.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/25ac94b7192d401f8ce7b7c072877502/refined_render_04.png
+  prompt: A white robot.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/d934a40736f64662a5877400ddce218e.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/d934a40736f64662a5877400ddce218e/refined_render_04.png
+  prompt: A small, stylized robot with a rounded head, large oval eyes, an antenna
+    on top, and triangular feet, featuring aqua accents on the eyes, shoulders, chest,
+    and joints.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/53e2fef6b64847c8ac52cd0fbd477cd0.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/53e2fef6b64847c8ac52cd0fbd477cd0/refined_render_04.png
+  prompt: A small, stylized dinosaur-like creature with reddish-brown skin, prominent
+    white teeth, large eyes, and small triangular horns on its head and back.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/64158830668aae68a879f8633b23915d57200ee79c4267fac546c94b3067111c.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/64158830668aae68a879f8633b23915d57200ee79c4267fac546c94b3067111c/refined_render_04.png
+  prompt: A human figure wearing black clothing and purple shoes.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/14e18451cf33e3991d9ba70185aaa9dcbc3d0aedbcbbda22427b145e69ccb926.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/14e18451cf33e3991d9ba70185aaa9dcbc3d0aedbcbbda22427b145e69ccb926/refined_render_04.png
+  prompt: Stylized humanoid figure with minimal features, wearing a black outfit with
+    yellow accents on the lower legs and feet, as well as a yellow head.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/4ddf8d1c07f2623d5ddc44282f84a711b79fdf32197a454de1c335b537c6815c.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/4ddf8d1c07f2623d5ddc44282f84a711b79fdf32197a454de1c335b537c6815c/refined_render_04.png
+  prompt: Bright pink abstract human figure in various dynamic poses.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/2529e12823e98a554be9777abd9a6a35d2690c82c93edf35554d6ea95b40b3c9.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/2529e12823e98a554be9777abd9a6a35d2690c82c93edf35554d6ea95b40b3c9/refined_render_04.png
+  prompt: A stylized female character wears a patterned long dress with a blue sash,
+    a brown corset, and a headwrap adorned with jewelry.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/0c4b327cf2211abe5906647e8fe173a1722402185c6ccd354dc072731042191a.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/0c4b327cf2211abe5906647e8fe173a1722402185c6ccd354dc072731042191a/refined_render_04.png
+  prompt: A colorful, whimsical creature with a long, pointed green hat, from which
+    hangs a small decorative item. The body features vibrant details and limbs in
+    varying hues, giving it a playful appearance.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/fdee1aacab11858c991a36474703e6628de2afe7ef521005808c87a353aa7c54.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/fdee1aacab11858c991a36474703e6628de2afe7ef521005808c87a353aa7c54/refined_render_04.png
+  prompt: Monochromatic purple silhouette of a female anime-style character with long
+    hair and a school uniform.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/f9878e429fac440cbf38df1002cc2ef5.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/f9878e429fac440cbf38df1002cc2ef5/refined_render_04.png
+  prompt: A sleek, glossy white electric toothbrush with a minimalist design, featuring
+    a slender handle that tapers toward a detachable brush head, which is outfitted
+    with bristles at one end and a simple connection mechanism at the other.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/13466bd98f39fc182c81b18e841d6e1d81977de6ecabc691c8736f5abe55d446.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/13466bd98f39fc182c81b18e841d6e1d81977de6ecabc691c8736f5abe55d446/refined_render_04.png
+  prompt: A wireframe airplane with distinct fuselage, wings, and tail structures.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/7ef2dc68cb03005711700b3758cb53d913c43deb7a200d718fe2f37f3132a6b5.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/7ef2dc68cb03005711700b3758cb53d913c43deb7a200d718fe2f37f3132a6b5/refined_render_04.png
+  prompt: A stylized, cartoon-like snail featuring a smooth, round body and elongated
+    antennae, all in a vibrant pink color.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/ca8939102ba645ea89d49e4b9f725bf0.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/ca8939102ba645ea89d49e4b9f725bf0/refined_render_04.png
+  prompt: A cartoon clown character in a red and blue outfit, holding a balloon, a
+    stick, and a sign, and wearing a hat.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/b39468cdce626b486e87f6cb277a6173b2972dd1e5450a933b34b045256cc861.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/b39468cdce626b486e87f6cb277a6173b2972dd1e5450a933b34b045256cc861/refined_render_04.png
+  prompt: A vibrant, abstract shape with varying edges and contours, primarily in
+    a bold pink hue.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/81015a944cd5c6dfe0f9704dcd2f4cad90b748f5c60a903037d26eab61ee1adc.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/81015a944cd5c6dfe0f9704dcd2f4cad90b748f5c60a903037d26eab61ee1adc/refined_render_04.png
+  prompt: A round, cartoonish chicken with a brown body, yellow feet, and a distinct
+    red comb, characterized by large, expressive eyes.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/f038e1822741482cb4dd8002904bfcc1.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/f038e1822741482cb4dd8002904bfcc1/refined_render_04.png
+  prompt: A segmented robotic canine-like figure with a long snout and sharp teeth.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/f5cd6ce9cb114e0ca11d721c9d3c4582.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/f5cd6ce9cb114e0ca11d721c9d3c4582/refined_render_04.png
+  prompt: A black bear with white claws and a patch of white fur on its chest, showing
+    an open mouth with visible teeth and tongue.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/2546097d0ea94ba88452ce62c041fb87.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/2546097d0ea94ba88452ce62c041fb87/refined_render_04.png
+  prompt: Royalty-free zebra
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/32c0a18b236aa0e8a408213a3bb8e821171dcf5b7d11b7fcd337bf25d9160549.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/32c0a18b236aa0e8a408213a3bb8e821171dcf5b7d11b7fcd337bf25d9160549/refined_render_04.png
+  prompt: A stylized boy in motion with brown hair, wearing a red shirt, teal shorts,
+    red and white sneakers, and green gloves.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/a2a614daf8cd4b469859f231d5fd6514.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/a2a614daf8cd4b469859f231d5fd6514/refined_render_04.png
+  prompt: A yellow and black bird in mid-flight with extended wings.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/5fa75f4ad0084cde8a736166c40ad016.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/5fa75f4ad0084cde8a736166c40ad016/refined_render_04.png
+  prompt: A pixelated Minecraft character wearing a pink hat and pink hair.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/43c99ffbab1065e604fc7e6d694f41f496f0b56671f55fb21d9b67e78ef7b77a.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/43c99ffbab1065e604fc7e6d694f41f496f0b56671f55fb21d9b67e78ef7b77a/refined_render_04.png
+  prompt: A playful, stylized figure resembling a small animal, characterized by a
+    vibrant red body with darker red accents on the ears, paws, and around the eyes.
+    The limbs and body have a smooth, rounded design, contributing to an overall cartoonish
+    appearance. The posture suggests an animated, dynamic pose, as if playfully interacting
+    or preparing for movement. The surface appears soft and tactile, enhancing its
+    whimsical look.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/f14ba9a43d34ab016af69ab9a6a54faf6d2c22a5bea428e2ccb17ab1fb128626.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/f14ba9a43d34ab016af69ab9a6a54faf6d2c22a5bea428e2ccb17ab1fb128626/refined_render_04.png
+  prompt: A stylized figure of a bird-like character with a round head, a small beak,
+    a feather-like crest on its head, wings as arms, and tail feathers.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/8bbd65ff5fc74a62833174e581531b95.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/8bbd65ff5fc74a62833174e581531b95/refined_render_04.png
+  prompt: A futuristic drone-like device with a circular turbine engine at its center,
+    surrounded by curved blue armor plates and supported by multiple legs and mechanical
+    arms.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/47d032b5e31c642316ba91d612b98d8da382479e762be2f69520121b616e7075.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/47d032b5e31c642316ba91d612b98d8da382479e762be2f69520121b616e7075/refined_render_04.png
+  prompt: A human figure wearing a striped shirt and a black skirt, with arms extended
+    outward and a casual stance.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/3305136942599858d43ce84b0de30ede338deca116ab42c142f5f0b04d53068b.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/3305136942599858d43ce84b0de30ede338deca116ab42c142f5f0b04d53068b/refined_render_04.png
+  prompt: A stylized young boy with smooth features, wearing a red T-shirt, gray pants,
+    and red shoes, exhibiting a cheerful demeanor.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/217ae2ef768723c3318b4b5af6f2223fe0458562e802964b94713ba8eb8e2ad8.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/217ae2ef768723c3318b4b5af6f2223fe0458562e802964b94713ba8eb8e2ad8/refined_render_04.png
+  prompt: A cloaked archer seated in a relaxed position, holding a quiver of arrows
+    on their back, exudes a sense of calm and readiness.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/802b8b77b360084d43b9462ac2fcf825860b00b3cdd79b7d6709b0b1f7df2e97.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/802b8b77b360084d43b9462ac2fcf825860b00b3cdd79b7d6709b0b1f7df2e97/refined_render_04.png
+  prompt: A stylized figure wearing purple camouflage pants and shoes.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/2a1514a986199558e3f6e5279f608aced77dd057e57270c98a150a2cb8b82bd8.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/2a1514a986199558e3f6e5279f608aced77dd057e57270c98a150a2cb8b82bd8/refined_render_04.png
+  prompt: A stylized humanoid figure wearing a helmet and padded cricket gear, featuring
+    a bright magenta body and grey protective elements.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/0e1f49820f25220668a53e6c1e5e0d15bf90be93f09bd14b35b2b0595f22250a.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/0e1f49820f25220668a53e6c1e5e0d15bf90be93f09bd14b35b2b0595f22250a/refined_render_04.png
+  prompt: Stylized astronaut with a simplistic design, featuring a large gray helmet
+    with a yellow cap, a light blue visor, and a white and dark gray spacesuit with
+    black, yellow, and green details. The astronaut is equipped with a gray backpack
+    with red and black accents, white gloves, and boots.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/56f27e0675c57795a6eb088ccbc05d851bff3a644e61db32f1e0599686c788c0.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/56f27e0675c57795a6eb088ccbc05d851bff3a644e61db32f1e0599686c788c0/refined_render_04.png
+  prompt: Silhouetted medieval knight in full armor with a sword and shield.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/f5fda3de39ca60fd0e1bddd50808403bef3bce5a47204ef6dc9ca29843805af5.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/f5fda3de39ca60fd0e1bddd50808403bef3bce5a47204ef6dc9ca29843805af5/refined_render_04.png
+  prompt: A stylized, geometric creature with a mix of purple and gray facets, featuring
+    an elongated body, limbs, and a whimsical appearance.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/3dc98d5dc4b446b6b6ac13d5301aa5b8.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/3dc98d5dc4b446b6b6ac13d5301aa5b8/refined_render_04.png
+  prompt: Sonic the Hedgehog
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/e70822505ce0467eb574ed5f82d7d65e.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/e70822505ce0467eb574ed5f82d7d65e/refined_render_04.png
+  prompt: A small, stylized creature with a light green body, large eyes with leafy
+    patterns, and two tall, gradient blue-tipped antennae on its head.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/db1845c3c71c8c4d552d2c6f28a592cba106e79032b83a01f7c5c4ca609ef034.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/db1845c3c71c8c4d552d2c6f28a592cba106e79032b83a01f7c5c4ca609ef034/refined_render_04.png
+  prompt: A low-poly giraffe with spots, a long neck, and a short tail.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/11621126b8f14533a8d367406c38a5ce.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/11621126b8f14533a8d367406c38a5ce/refined_render_04.png
+  prompt: A white and black pixel character resembling a man, a sheep, or a skeleton,
+    possibly holding a stick.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/b22d5ba84854886a8f7c0585ab7ed5524e1274ef5b160b618ace90d2063f6c45.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/b22d5ba84854886a8f7c0585ab7ed5524e1274ef5b160b618ace90d2063f6c45/refined_render_04.png
+  prompt: A vibrant long-sleeved magenta top with a relaxed fit and a round neckline.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/659277b52067d647812f6e8b4ec8a5f624d3aacb38bcfc2452a4bb56d2453c78.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/659277b52067d647812f6e8b4ec8a5f624d3aacb38bcfc2452a4bb56d2453c78/refined_render_04.png
+  prompt: A geometric, low-poly representation of a beetle featuring a rounded body
+    and multiple limbs, presented in solid black.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/f4328aabcd525ba436418c3091ba13fd98471e6542f721cb41ffdc2baa71e3d7.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/f4328aabcd525ba436418c3091ba13fd98471e6542f721cb41ffdc2baa71e3d7/refined_render_04.png
+  prompt: A human figure in a purple outfit, featuring a prosthetic limb on the left
+    side and arms positioned in various stances, including relaxed and outstretched.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/71decd0f32b41b4137e16b5ed0e59f37c4304fdc9d59c2f57ea0a7c5058e50dc.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/71decd0f32b41b4137e16b5ed0e59f37c4304fdc9d59c2f57ea0a7c5058e50dc/refined_render_04.png
+  prompt: A humanoid figure with outstretched arms, wearing a simple outfit and a
+    cap, in solid magenta color with contrasting black shoes.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/77fbf5e42e1544ea3a770c2ee5e230a415d4efde359876b57194e042cf4ec966.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/77fbf5e42e1544ea3a770c2ee5e230a415d4efde359876b57194e042cf4ec966/refined_render_04.png
+  prompt: A slender humanoid figure dressed in a striped prison uniform, displaying
+    various poses and expressions, with bare feet and a cap.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/f26867eb59d3c4a6e9a3a9400521f68276fdac3a57782689c5dc4b00495c7ea2.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/f26867eb59d3c4a6e9a3a9400521f68276fdac3a57782689c5dc4b00495c7ea2/refined_render_04.png
+  prompt: A stylized humanoid figure with a turquoise finish and segmented black joints
+    is posed dynamically with arms extended, suggesting interaction or movement.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/077db182784243dfb6e309fcec8730ee.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/077db182784243dfb6e309fcec8730ee/refined_render_04.png
+  prompt: A low-poly character wearing a blue shirt and hat, black pants, and gloves
+    with two blue stripes.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/c0f66abf9f127a6d19704832cd5e3799774097c0703007d57fc9a95f8d29f4cf.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/c0f66abf9f127a6d19704832cd5e3799774097c0703007d57fc9a95f8d29f4cf/refined_render_04.png
+  prompt: A small, circular object with a reddish hue, surrounded by a dark background.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/30e27f648c53095004ec079e6ef711cec9f09f7f9c71348cadb31adc53e140c2.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/30e27f648c53095004ec079e6ef711cec9f09f7f9c71348cadb31adc53e140c2/refined_render_04.png
+  prompt: A futuristic humanoid figure in tactical armor, featuring a distinctive
+    emblem and a short, stylized blond hairstyle, appears to be in motion, suggesting
+    agility and readiness for action.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/3c72cb27310841d29f8f85b1bf1d4e85.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/3c72cb27310841d29f8f85b1bf1d4e85/refined_render_04.png
+  prompt: Stylized anthropomorphic character with blue skin, a prominent red scarf,
+    a spherical white object attached to its midsection, and boots. Features small
+    orange accents on the skin, a black outfit, and carries a stoic expression.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/b3f95cb04465e5fd9ddb2cb217aaaf2bb2e04b6ea1220d054b73823ef47a74a3.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/b3f95cb04465e5fd9ddb2cb217aaaf2bb2e04b6ea1220d054b73823ef47a74a3/refined_render_04.png
+  prompt: A small anthropomorphic fox character with large ears, wearing a yellow
+    shirt and green pants decorated with a diamond pattern, and a fluffy white tail.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/bf10bef68fa1b1a2a29aa057199c09a3df87dc461332b164e3c6d93b3a6c1aa7.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/bf10bef68fa1b1a2a29aa057199c09a3df87dc461332b164e3c6d93b3a6c1aa7/refined_render_04.png
+  prompt: Bright pink, simplified representation of a humanoid figure with an oversized
+    head, small circular ears, circular body, short limbs, and no facial features.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/26083d13429e8cf3c4d4186d827c63705299e7c09314cd2776d4f5b32fbd9988.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/26083d13429e8cf3c4d4186d827c63705299e7c09314cd2776d4f5b32fbd9988/refined_render_04.png
+  prompt: A pink, wolf-like creature with a long tail and pointed ears.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/760415a4304670bd681d3ebbfd95d54e9e47812f7f34a677cea697404c79c3cc.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/760415a4304670bd681d3ebbfd95d54e9e47812f7f34a677cea697404c79c3cc/refined_render_04.png
+  prompt: Animated representation of a stylized dog with exaggerated features, predominantly
+    brown with patches of white, depicted in various poses suggesting movement and
+    activity.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/b84f88be84113b1e11ff1faf80283d82c7eda99155c8a2453f38ede1c67af137.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/b84f88be84113b1e11ff1faf80283d82c7eda99155c8a2453f38ede1c67af137/refined_render_04.png
+  prompt: An insect resembling a bee with large wings, six legs, and antennae.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/09af14c0db555d9eb73c36b48dd89686b6650d23535762375471600638702316.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/09af14c0db555d9eb73c36b48dd89686b6650d23535762375471600638702316/refined_render_04.png
+  prompt: A stylized pink representation of a bee, showcasing its distinctive body
+    shape and wings.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/8dfc373b2d2e93819ff1aefb4ab31a67a784596b96e10bdbfe9888ffc30f7259.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/8dfc373b2d2e93819ff1aefb4ab31a67a784596b96e10bdbfe9888ffc30f7259/refined_render_04.png
+  prompt: A set of abstract shapes featuring bold pink elements juxtaposed against
+    a solid black background, characterized by fluid contours and intertwining forms.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/15f429114b6541f9bff407f829c59285.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/15f429114b6541f9bff407f829c59285/refined_render_04.png
+  prompt: A purple bird with an orange beak and legs.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/992452a32202021a9a79759f1a346b7ec37f1eda212d970af6b4f422d8754360.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/992452a32202021a9a79759f1a346b7ec37f1eda212d970af6b4f422d8754360/refined_render_04.png
+  prompt: A large, muscular creature featuring spiked protrusions, heavy chains, and
+    a rugged appearance, embodying a fierce and intimidating presence.
+- skeleton: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_skeletons/59a4c564e45f5a140cf914e46a0717add90f10a4b1bff4d9d6ae25fdf818870f.json
+  image: /home/yuachen/SK-Adapter-Extension-main/vis/refine_test_stage2/59a4c564e45f5a140cf914e46a0717add90f10a4b1bff4d9d6ae25fdf818870f/refined_render_04.png
+  prompt: Stylized cartoon character with dark brown hair, a blue short-sleeved shirt,
+    and black shorts. The character appears barefoot and has simple facial features
+    with blue eyes.
